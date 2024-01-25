@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Css Packages -->
+    <link rel="stylesheet" href="../static/css/normalize.css" />
+    <link rel="stylesheet" href="../static/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../static/css/regular.min.css" />
+    <link rel="stylesheet" href="../static/css/solid.min.css" />
+    <!-- My Css -->
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/media.css" />
+    <title>TodoChan</title>
+  </head>
+  <body>
+    <div class="content">
+      <!--###### Start aside ######-->
+      <aside id="side" class="hid-xe">
+        <section class="top-side">
+          <div class="buttons-container">
+            <div id="my-day" class="side-button">
+              <i class="fa-regular fa-sun"></i>
+              <span>my day</span>
+            </div>
+            <div id="my-planned" class="side-button">
+              <i class="fa-solid fa-tasks alt-color"></i>
+              <span>planned</span>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <div class="side-button">
+              <i class="fa-solid fa-folder"></i>
+              <span>group</span>
+            </div>
+            <div class="side-button nested-button">
+              <i class="fa-solid fa-list alt-color"></i>
+              <span>nested list</span>
+            </div>
+            <div class="side-button">
+              <i class="fa-solid fa-list alt-color"></i>
+              <span>list</span>
+            </div>
+          </div>
+        </section>
+        <section class="bottom-side">
+          <div class="add-button big-button">
+            <i class="fa-solid fa-plus"></i>
+            <span>new list</span>
+          </div>
+          <div class="add-button">
+            <i class="fa-solid fa-folder"></i>
+          </div>
+        </section>
+      </aside>
+      <i id="side-toggle" class="fa-solid fa-bars vis-xe-ib display-side"></i>
+      <!--###### End aside ######-->
+      <!--###### Start tasks section ######-->
+      <section id="tasks-container" class="tasks-container">Hello</section>
+      <!--###### End tasks section ######-->
+    </div>
+    <script src="../static/js/toggle.js"></script>
+  </body>
+</html>

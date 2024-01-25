@@ -1,0 +1,170 @@
+/* Start Global */
+:root {
+    --main-color: #5677fc;
+    --main-alt: #3f51b5;
+    --dark-main: #202020;
+    --dark-alt: #303030;
+    --light-main: #d0d0d0;
+    --light-alt: #c0c0c0;
+    --light-alpha: #e0e0e033;
+    --main-transition: 0.3s;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+}
+
+.container{
+    margin: auto;
+    padding: 0 15px;
+}
+/* End Global */
+
+/* Start content */
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+/* End content */
+
+/* Start Aside */
+.content aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--dark-main);
+    flex-basis: 25%;
+    height: 100vh;
+    border-right: 2px solid var(--dark-alt);
+    box-shadow: 1px 0px 8px var(--dark-main);
+}
+
+.content aside.small-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 50%;
+}
+
+.content aside .buttons-container:first-of-type {
+    border-bottom: 2px solid var(--dark-alt);
+}
+
+.content aside .side-button {
+    padding: 12px;
+    margin: 4px 2px;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background var(--main-transition);
+}
+
+.content aside .nested-button {
+    margin-left: 20px;
+}
+
+.content aside .side-button::before {
+    content: "";
+    width: 3px;
+    height: 0;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    border-radius: 6px;
+    transition: height var(--main-transition), top var(--main-transition);
+}
+
+.content aside .side-button:hover,
+.content aside .side-button.active {
+    background-color: var(--light-alpha);
+}
+
+.content aside .side-button:hover::before,
+.content aside .side-button.active::before {
+    height: 50%;
+    top: 25%;
+}
+
+.content aside .side-button i {
+    color: var(--main-color);
+}
+
+.content aside .side-button i.alt-color {
+    color: var(--main-alt);
+}
+
+.content aside .side-button span {
+    text-transform: capitalize;
+    color: var(--light-main);
+    font-weight: 400;
+}
+
+.content aside .bottom-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content aside .bottom-side .big-button {
+    flex-grow: 1;
+}
+
+.content aside .bottom-side .add-button {
+    padding: 12px;
+    margin: 4px 2px;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background var(--main-transition);
+}
+
+.content aside .bottom-side .add-button span {
+    text-transform: capitalize;
+    color: var(--light-main);
+    font-weight: 400;
+}
+
+.content aside .bottom-side .add-button i {
+    color: var(--light-main)
+}
+
+.content aside .add-button:hover,
+.content aside .add-button.active {
+    background-color: var(--light-alpha);
+}
+
+.content .display-side {
+    display: none;
+    font-size: 1.4em;
+    color: var(--main-color);
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background var(--main-transition);
+}
+
+.content .display-side:hover {
+    background-color: var(--light-alpha)
+}
+
+/* End Aside */
+
+/* Start Section */
+.content .tasks-container {
+    background-color: var(--dark-main);
+    flex-basis: 75%;
+    flex-grow: 1;
+    height: 100vh;
+}
+/* End Section */
