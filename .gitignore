@@ -1,0 +1,11 @@
+## temp
+*.swp
+temp*
+.vscode/
+instance/
+
+## linux
+*.sh
+
+## python
+*.pyc
