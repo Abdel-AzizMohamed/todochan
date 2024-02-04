@@ -4,7 +4,7 @@ const aside = document.getElementById("side"),
   sideButtons = document.querySelectorAll(".buttons-container div");
 
 sideToggleButton.onclick = (_) => aside.classList.toggle("hid-xe");
-tasksContainer.onclick = (_) => aside.classList.toggle("hid-xe");
+tasksContainer.onclick = (_) => aside.classList.add("hid-xe");
 
 function activeSideButton() {
   for (let i = 0; i < sideButtons.length; i++) {

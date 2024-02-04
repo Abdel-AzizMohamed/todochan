@@ -4,6 +4,7 @@
     --main-alt: #3f51b5;
     --dark-main: #202020;
     --dark-alt: #303030;
+    --dark-alpha: #202020ee;
     --light-main: #d0d0d0;
     --light-alt: #c0c0c0;
     --light-alpha: #e0e0e033;
@@ -161,10 +162,212 @@ body{
 /* End Aside */
 
 /* Start Section */
-.content .tasks-container {
-    background-color: var(--dark-main);
+.content .main-content {
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    background-image: url("../src/bg.jpg");
+    background-size: cover;
+    box-shadow:  0px 0px 8px 3px var(--dark-main) inset;
     flex-basis: 75%;
     flex-grow: 1;
     height: 100vh;
+}
+
+.content .main-content .top-section {
+    flex-basis: 100%;
+}
+
+.content .main-content .overlay {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-image: linear-gradient(var(--dark-main) 0, transparent);
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.content .main-content .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+.content .main-content .top-bar h2 {
+    text-transform: capitalize;
+    color: var(--light-main);
+    font-weight: 600;
+    font-size: 1.8em;
+}
+.content .main-content .top-bar i {
+    color: var(--light-main);
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background var(--main-transition)
+}
+
+.content .main-content .top-bar i:hover {
+    background-color: var(--light-alpha);
+}
+
+.content .main-content .tasks-container {
+    margin: 10px 0;
+}
+
+.content .main-content .tasks-container .task {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: var(--dark-alt);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 1px var(--dark-main);
+    transition: background var(--main-transition);
+    cursor: pointer;
+}
+
+.content .main-content .tasks-container .task:hover {
+    background-color: var(--dark-main);
+}
+
+.content .main-content .tasks-container .task .checkbox {
+    position: relative;
+    margin-right: 15px;
+}
+
+.content .main-content .tasks-container .task .checkbox input {
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.content .main-content .tasks-container .task .checkbox input + label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid var(--light-alt);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background var(--main-transition), border var(--main-transition);
+}
+
+.content .main-content .tasks-container .task .checkbox input:checked + label {
+    border-color: var(--main-alt);
+    background-color: var(--main-color);
+}
+
+.content .main-content .tasks-container .task .checkbox i {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    font-size: 0.8em;
+    color: var(--light-main)
+}
+
+.content .main-content .tasks-container .task .checkbox input:checked ~ i,
+.content .main-content .tasks-container .task .checkbox input:hover ~ i {
+    display: inline;
+}
+
+.content .main-content .tasks-container .task .task-info .task-title {
+    color: var(--light-main);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.content .main-content .tasks-container .task .task-info .info-container {
+    margin-top: 8px;
+}
+
+.content .main-content .tasks-container .task .task-info .task-list {
+    color: var(--light-alt);
+    font-weight: 400;
+}
+
+.content .main-content .tasks-container .task .task-info .task-state {
+    color: var(--light-alt);
+    padding: 0 8px;
+    font-weight: 400;
+}
+
+.content .main-content .tasks-container .task .task-info .task-state i {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.content .main-content .tasks-container .task .task-info .fa-repeat {
+    color: var(--light-alt)
+}
+
+.content .main-content .completed-button {
+    align-items: center;
+    width: fit-content;
+    background-color: var(--dark-alt);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 1px var(--dark-main);
+    cursor: pointer;
+    transition: background var(--main-transition);
+}
+
+.content .main-content .completed-button:hover {
+    background-color: var(--dark-main);
+}
+
+.content .main-content .completed-button span {
+    color: var(--light-main);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.content .main-content .completed-button i {
+    color: var(--light-main);
+    margin-right: 10px;
+}
+
+.content .main-content .bottom-section {
+    display: flex;
+    background-color: var(--dark-alpha);
+    flex-basis: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 4px 1px var(--dark-main);
+}
+
+.content .main-content .bottom-section i {
+    color: var(--light-main);
+    margin-right: 10px;
+}
+
+.content .main-content .bottom-section input[type="text"] {
+    color: var(--light-main);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    flex: 1;
 }
 /* End Section */

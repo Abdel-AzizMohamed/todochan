@@ -64,9 +64,81 @@
       <i id="side-toggle" class="fa-solid fa-bars vis-xe-ib display-side"></i>
       <!--###### End aside ######-->
       <!--###### Start tasks section ######-->
-      <section id="tasks-container" class="tasks-container">Hello</section>
+      <section id="tasks-container" class="main-content container">
+        <div class="overlay"></div>
+        <div class="top-section">
+          <div class="top-bar">
+            <h2>my day</h2>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+          <div id="todo-tasks" class="tasks-container">
+            <div class="task">
+              <div class="checkbox">
+                <input type="checkbox" name="done" value="0" />
+                <label></label>
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="task-info">
+                <span class="task-title">home work</span>
+                <div class="info-container">
+                  <span class="task-list">school</span>
+                  <span class="task-state"
+                    ><i class="fa-solid fa-calendar-week"></i>today</span
+                  >
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+            </div>
+            <div class="task">
+              <div class="checkbox">
+                <input type="checkbox" name="done" value="0" />
+                <label></label>
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="task-info">
+                <span class="task-title">drawing</span>
+                <div class="info-container">
+                  <span class="task-list">school</span>
+                  <span class="task-state"
+                    ><i class="fa-solid fa-calendar-week"></i>today</span
+                  >
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="completed-button" class="completed-button">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>completed 12</span>
+          </div>
+          <div id="completed-tasks" class="tasks-container">
+            <div class="task">
+              <div class="checkbox">
+                <input type="checkbox" name="done" value="0" />
+                <label></label>
+                <i class="fa fa-check"></i>
+              </div>
+              <div class="task-info">
+                <span class="task-title">programming</span>
+                <div class="info-container">
+                  <span class="task-list">school</span>
+                  <span class="task-state"
+                    ><i class="fa-solid fa-calendar-week"></i>today</span
+                  >
+                  <i class="fa-solid fa-repeat"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-section">
+          <i class="fa-solid fa-plus"></i>
+          <input type="text" placeholder="add a task" />
+        </div>
+      </section>
       <!--###### End tasks section ######-->
     </div>
     <script src="../static/js/toggle.js"></script>
+    <script src="../static/js/complete_task.js"></script>
   </body>
 </html>
